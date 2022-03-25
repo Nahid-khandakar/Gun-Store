@@ -3,13 +3,36 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Card from './component/Card/Card';
 import Navbar from './component/Navbar/Navbar';
+import Modal from 'react-modal';
+
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+  },
+};
+
+
+Modal.setAppElement('root');
 
 function App() {
 
   const [guns, setGuns] = useState([])
   const [cart, setCart] = useState([])
+  const [modalIsOpen, setIsOpen] = useState(false);
 
-  console.log(cart)
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   //console.log(guns)
   useEffect(() => {
