@@ -3,10 +3,10 @@ import './Navbar.css'
 import { BsCartDashFill } from 'react-icons/bs';
 
 const Navbar = (props) => {
-    console.log(props)
+    //console.log(props)
     return (
         <div className='navbar'>
-            <h1>Samsu Store</h1>
+            <h1>Gun Store</h1>
 
             <div className='cart-counter' onClick={props.openModal}>
                 <span>{props.cart.length}</span>
