@@ -1,0 +1,23 @@
+.card {
+    background-color: #c4c4c4;
+    height: 570px;
+    width: 350px;
+    padding: 15px;
+    position: relative;
+    justify-self: center;
+    clip-path: polygon(15% 0%, 100% 0, 100% 90%, 85% 100%, 0 100%, 0% 10%);
+  }
+  
+  .image-container {
+    width: 320px;
+    height: 320px;
+    background-color: #fff;
+    padding: 25px;
+    clip-path: polygon(15% 0%, 100% 0, 100% 86%, 85% 100%, 0 100%, 0% 16%);
+  }
+  
+  .image-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
