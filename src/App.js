@@ -7,6 +7,9 @@ import Navbar from './component/Navbar/Navbar';
 function App() {
 
   const [guns, setGuns] = useState([])
+  const [cart, setCart] = useState([])
+
+  console.log(cart)
 
   //console.log(guns)
   useEffect(() => {
@@ -14,6 +17,13 @@ function App() {
       .then(res => res.json())
       .then(data => setGuns(data))
   }, [])
+
+
+  const handelAddToCart = (gun) => {
+    //console.log('clicked', gun)
+    const newCart = [...cart, gun]
+    setCart(newCart)
+  }
 
 
   return (
@@ -24,6 +34,7 @@ function App() {
         {
           guns.map(gun => <Card
             gun={gun}
+            handelAddToCart={handelAddToCart}
             key={gun.id}
           ></Card>)
         }
