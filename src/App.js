@@ -18,7 +18,7 @@ const customStyles = {
 };
 
 
-Modal.setAppElement('root');
+Modal.setAppElement('#root');
 
 function App() {
 
@@ -51,7 +51,15 @@ function App() {
 
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar openModal={openModal} cart={cart} ></Navbar>
+
+      {/* card .js data come from handelAddToCart and map it again */}
+
+      {/* <div>
+        {
+          cart.map(item => <h1 key={item.id}>{item.name}</h1>)
+        }
+      </div> */}
 
       <div className='card-container'>
         {
@@ -62,6 +70,22 @@ function App() {
           ></Card>)
         }
       </div>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <button onClick={closeModal}>Close</button>
+
+        <div>
+          {
+            cart.map(item => <h1 item={item}>{item.name}</h1>)
+          }
+        </div>
+
+      </Modal>
 
     </div>
   );
